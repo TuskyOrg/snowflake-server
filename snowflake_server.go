@@ -34,7 +34,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		map[string]string{
 			"id": strconv.FormatUint(id, 10),
 		})
-	fmt.Printf("%d\n", id)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
