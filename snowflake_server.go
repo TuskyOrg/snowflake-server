@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/AmreeshTyagi/goldflake"
 	"net/http"
 	"strconv"
@@ -29,7 +28,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	fmt.Printf("%v\n", id)
 	body, err := json.Marshal(
 		map[string]string{
 			"id": strconv.FormatUint(id, 10),
